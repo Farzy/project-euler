@@ -1,9 +1,6 @@
 use std::env;
 use std::collections::HashMap;
-use project_euler::helper;
-
-mod euler_1;
-mod euler_2;
+use project_euler::*;
 
 // Simplify long hashmap type
 type FunctionHash = HashMap<String, (String, fn())>;

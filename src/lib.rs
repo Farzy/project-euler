@@ -14,3 +14,6 @@ pub mod helper {
         println!("{}\n", dashes);
     }
 }
+
+pub mod euler_1;
+pub mod euler_2;
