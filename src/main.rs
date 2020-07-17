@@ -3,6 +3,7 @@ use std::collections::HashMap;
 use project_euler::helper;
 
 mod euler_1;
+mod euler_2;
 
 // Simplify long hashmap type
 type FunctionHash = HashMap<String, (String, fn())>;
@@ -17,7 +18,8 @@ fn main() {
         );
     }
 
-    module!(euler_1, "Euler 1");
+    module!(euler_1, "Euler 1: Multiples of 3 and 5");
+    module!(euler_2, "Euler 2: Even Fibonacci numbers");
 
     if env::args().len() == 1 { // No arguments
         eprintln!("Error: Missing argument");
