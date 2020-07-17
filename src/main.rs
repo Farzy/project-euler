@@ -9,7 +9,15 @@ type FunctionHash = HashMap<String, (String, fn())>;
 
 fn main() {
     let mut functions: FunctionHash = HashMap::new();
-    functions.insert(String::from("1"), (String::from("Euler 1"), euler_1::main));
+
+    macro_rules! module {
+        ($mod_name:ident, $desc:expr) => (
+            functions.insert(String::from(stringify!($mod_name)),
+                             (String::from($desc), $mod_name::main));
+        );
+    }
+
+    module!(euler_1, "Euler 1");
 
     if env::args().len() == 1 { // No arguments
         eprintln!("Error: Missing argument");
