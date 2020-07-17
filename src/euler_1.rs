@@ -1,4 +1,4 @@
-pub fn main() {
+pub fn main() -> String {
     // Let's analyze the series of multiples of 3 and 5 in order to find a cycle in the increment
     // Series:
     //   3  5  6  9  10  12  15  18  20  21  24  25  27  30  33  35  36  39  40  42  45  48  50  51  54  55
@@ -15,5 +15,5 @@ pub fn main() {
         }
         sum += n;
     }
-    println!("{}", sum);
+    format!("{}", sum)
 }

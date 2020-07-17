@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use project_euler::*;
 
 // Simplify long hashmap type
-type FunctionHash = HashMap<String, (String, fn())>;
+type FunctionHash = HashMap<String, (String, fn() -> String)>;
 
 fn main() {
     let mut functions: FunctionHash = HashMap::new();
@@ -30,7 +30,7 @@ fn main() {
             } else if functions.contains_key(&k) {
                 let (description, func) = functions.get(&k).unwrap();
                 helper::section(description);
-                func();
+                println!("{}", func());
             } else {
                 eprintln!("ERROR: Problem '{}' not found", k);
             }

@@ -1,6 +1,6 @@
 const MAX: u32 = 4_000_000;
 
-pub fn main() {
+pub fn main() -> String {
     let mut sum = 0;
     // Let's start at i = 2 because it's the first non-null even number to sum
     let (mut i, mut j) = (2u32, 3u32);
@@ -13,7 +13,8 @@ pub fn main() {
             temp = i;
             i = j;
             j = temp + j;
-            println!("i: {}, sum: {}", temp, sum);
+            // println!("i: {}, sum: {}", temp, sum);
         }
     }
+    format!("{}", sum)
 }
